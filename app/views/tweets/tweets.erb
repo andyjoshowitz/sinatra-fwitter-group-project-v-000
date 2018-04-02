@@ -1,0 +1,17 @@
+<h1> Welcome, <%=@user.username%></h1>
+
+<h3>Your tweets:</h3>
+<%if @tweets.empty?%>
+  <%="You have no tweets :("%>
+<%else%>
+  <ul>
+    <%@tweets.each do |tweet|%>
+      <li><a href="/tweets/<%=tweet.id%>"><%=tweet.content%></a></li>
+    <%end%>
+  </ul>
+<%end%>
+<h3>Options:</h3>
+<ul>
+  <li><a href="/tweets/new">Write a new tweet</a></li>
+  <li><a href="/logout">Log Out</a></li>
+</ul>
